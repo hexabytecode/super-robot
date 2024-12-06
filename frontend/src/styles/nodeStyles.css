@@ -1,0 +1,29 @@
+/* nodeStyles.css */
+
+/* For the input fields */
+.node-input {
+  @apply px-3 py-1 border border-gray-300 rounded-md w-full text-sm;
+}
+
+/* For the select dropdowns */
+.node-select {
+  @apply px-3 py-1 border border-gray-300 rounded-md w-full text-sm;
+}
+
+/* For custom node base container styling */
+.node-base {
+  @apply w-64 h-auto p-4 bg-white border border-gray-300 rounded-lg shadow-lg;
+}
+
+/* Custom label style */
+.node-label {
+  @apply text-sm font-medium;
+}
+
+.btn {
+  @apply bg-indigo-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-600 transition duration-300;
+}
+
+.toolbar {
+  @apply bg-indigo-500 text-white rounded-lg p-2 shadow-md hover:bg-blue-300;
+}

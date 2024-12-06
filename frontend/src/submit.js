@@ -1,10 +1,12 @@
-// submit.js
-
 export const SubmitButton = () => {
-
-    return (
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <button type="submit">Submit</button>
-        </div>
-    );
-}
+  return (
+    <div className="flex items-center justify-center mt-4">
+      <button
+        type="submit"
+        className="btn"
+      >
+        Submit
+      </button>
+    </div>
+  );
+};

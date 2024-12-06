@@ -1,8 +1,11 @@
 // llmNode.js
 import NodeBase from "./nodeBase";
+import "../styles/nodeStyles.css"; // Import the CSS file
 
 export const LLMNode = ({ id }) => {
-  const content = <span>This is an LLM node.</span>;
+  const content = (
+    <span className="text-sm text-gray-600">This is an LLM node.</span>
+  );
 
   const handles = [
     {

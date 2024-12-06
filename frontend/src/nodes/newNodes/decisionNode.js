@@ -1,19 +1,21 @@
 import { useState } from "react";
 import NodeBase from "../nodeBase";
+import "../../styles/nodeStyles.css";
 
 export const DecisionNode = ({ id, data }) => {
   const [condition, setCondition] = useState(data?.condition || "isValid");
 
   const content = (
-    <div>
-      <label>
-        Condition:
+    <div className="space-y-2">
+      <div className="flex items-center space-x-2">
+        <label className="node-label">Condition:</label>
         <input
           type="text"
           value={condition}
           onChange={(e) => setCondition(e.target.value)}
+          className="node-input"
         />
-      </label>
+      </div>
     </div>
   );
 

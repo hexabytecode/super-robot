@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NodeBase from "../nodeBase";
+import "../../styles/nodeStyles.css";
 
 export const FilterNode = ({ id, data }) => {
   const [filterCondition, setFilterCondition] = useState(
@@ -7,15 +8,16 @@ export const FilterNode = ({ id, data }) => {
   );
 
   const content = (
-    <div>
-      <label>
-        Filter:
+    <div className="space-y-2">
+      <div className="flex items-center space-x-2">
+        <label className="node-label">Filter:</label>
         <input
           type="text"
           value={filterCondition}
           onChange={(e) => setFilterCondition(e.target.value)}
+          className="node-input"
         />
-      </label>
+      </div>
     </div>
   );
 

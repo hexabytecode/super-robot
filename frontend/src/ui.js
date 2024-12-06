@@ -1,6 +1,5 @@
 // ui.js
 // Displays the drag-and-drop UI
-// --------------------------------------------------
 
 import { useState, useRef, useCallback } from "react";
 import ReactFlow, { Controls, Background, MiniMap } from "reactflow";
@@ -102,7 +101,7 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "70vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -116,8 +115,9 @@ export const PipelineUI = () => {
           proOptions={proOptions}
           snapGrid={[gridSize, gridSize]}
           connectionLineType="smoothstep"
+          className={{ backgroundColor: "#e5e7eb" }} /* Light gray background */
         >
-          <Background color="#aaa" gap={gridSize} />
+          <Background color="#000" gap={gridSize} />
           <Controls />
           <MiniMap />
         </ReactFlow>
