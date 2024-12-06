@@ -31,7 +31,10 @@ export const OutputNode = ({ id, data }) => {
     </div>
   );
 
-  const handles = [{ type: "target", position: "left", id: "value" }];
+  const handles = [
+    { type: "target", position: "left", id: "value" },
+    { type: "source", position: "top", id: "retrigger" },
+  ];
 
   return (
     <NodeBase

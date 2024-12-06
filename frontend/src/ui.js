@@ -10,7 +10,11 @@ import { InputNode } from "./nodes/inputNode";
 import { LLMNode } from "./nodes/llmNode";
 import { OutputNode } from "./nodes/outputNode";
 import { TextNode } from "./nodes/textNode";
-import { CalculatorNode } from "./nodes/calculatorNode";
+import { FilterNode } from "./nodes/newNodes/filterNode";
+import { FileNode } from "./nodes/newNodes/fileNode";
+import { TransformerNode } from "./nodes/newNodes/transformerNode";
+import { DecisionNode } from "./nodes/newNodes/decisionNode";
+import { TimeoutNode } from "./nodes/newNodes/timeoutNode";
 
 import "reactflow/dist/style.css";
 
@@ -21,7 +25,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
-  calculator: CalculatorNode,
+  file: FileNode,
+  filter: FilterNode,
+  transformer: TransformerNode,
+  decision: DecisionNode,
+  timeout: TimeoutNode,
 };
 
 const selector = (state) => ({
