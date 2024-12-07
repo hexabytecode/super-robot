@@ -20,7 +20,10 @@ export const TimeoutNode = ({ id, data }) => {
         <input
           type="number"
           value={timeoutDuration}
-          onChange={(e) => setTimeoutDuration(e.target.value)}
+          onChange={(e) => {
+            setTimeoutDuration(e.target.value);
+            setError(false);
+          }}
           className="node-input"
         />
       </div>

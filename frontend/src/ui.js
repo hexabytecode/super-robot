@@ -101,7 +101,7 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "70vh" }}>
+      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "73vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -117,7 +117,7 @@ export const PipelineUI = () => {
           connectionLineType="smoothstep"
           className={{ backgroundColor: "#e5e7eb" }} /* Light gray background */
         >
-          <Background color="#000" gap={gridSize} />
+          <Background color="#000" gap={gridSize} lineWidth={2} />
           <Controls />
           <MiniMap />
         </ReactFlow>

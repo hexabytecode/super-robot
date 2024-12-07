@@ -1,7 +1,6 @@
-// draggableNode.js
 import "./styles/nodeStyles.css";
 
-export const DraggableNode = ({ type, label }) => {
+export const DraggableNode = ({ type, label, icon }) => {
   const onDragStart = (event, nodeType) => {
     const appData = { nodeType };
     event.target.style.cursor = "grabbing";
@@ -17,18 +16,10 @@ export const DraggableNode = ({ type, label }) => {
       className={"toolbar"}
       onDragStart={(event) => onDragStart(event, type)}
       onDragEnd={(event) => (event.target.style.cursor = "grab")}
-      style={{
-        cursor: "grab",
-        minWidth: "80px",
-        height: "60px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
       draggable
     >
-      <span className="font-semibold text-lg">{label}</span>
+      {icon && <span className="text-2xl mb-1">{icon}</span>}
+      <span className="text-md">{label}</span>
     </div>
   );
 };

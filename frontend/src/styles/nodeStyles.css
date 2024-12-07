@@ -21,9 +21,17 @@
 }
 
 .btn {
-  @apply bg-indigo-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-600 transition duration-300;
+  @apply mx-3 px-6 py-2 rounded-full shadow-md transition duration-300;
+}
+
+.submit {
+  @apply bg-gray-100 text-black hover:bg-gray-200;
+}
+
+.reset {
+  @apply bg-red-700 text-white hover:bg-red-800;
 }
 
 .toolbar {
-  @apply bg-indigo-500 text-white rounded-lg p-2 shadow-md hover:bg-blue-300;
+  @apply bg-gray-100 text-black cursor-grab flex items-center justify-center flex-col min-w-[80px] h-[80px] rounded-lg p-4 shadow-md hover:bg-gray-200 transition duration-300;
 }

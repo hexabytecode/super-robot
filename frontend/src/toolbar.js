@@ -1,20 +1,29 @@
-// toolbar.js
-
 import { DraggableNode } from "./draggableNode";
 
 export const PipelineToolbar = () => {
+  const toolbarItems = [
+    { type: "customInput", label: "Input", icon: "📥" },
+    { type: "llm", label: "LLM", icon: "🤖" },
+    { type: "customOutput", label: "Output", icon: "📤" },
+    { type: "text", label: "Text", icon: "📝" },
+    { type: "filter", label: "Filter", icon: "🔍" },
+    { type: "file", label: "File", icon: "📂" },
+    { type: "transformer", label: "Transformer", icon: "🔧" },
+    { type: "decision", label: "Decision", icon: "⚖️" },
+    { type: "timeout", label: "Timeout", icon: "⏳" },
+  ];
+
   return (
-    <div className="bg-gray-50 p-4 shadow-md rounded-md">
-      <div className="mt-6 flex flex-wrap gap-4 justify-start">
-        <DraggableNode type="customInput" label="Input" />
-        <DraggableNode type="llm" label="LLM" />
-        <DraggableNode type="customOutput" label="Output" />
-        <DraggableNode type="text" label="Text" />
-        <DraggableNode type="filter" label="Filter" />
-        <DraggableNode type="file" label="File" />
-        <DraggableNode type="transformer" label="Transformer" />
-        <DraggableNode type="decision" label="Decision" />
-        <DraggableNode type="timeout" label="Timeout" />
+    <div className="p-4 shadow-md">
+      <div className="mt-4 flex flex-wrap gap-4 justify-start">
+        {toolbarItems.map((item, index) => (
+          <DraggableNode
+            key={index}
+            type={item.type}
+            label={item.label}
+            icon={item.icon}
+          />
+        ))}
       </div>
     </div>
   );
