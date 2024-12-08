@@ -8,7 +8,6 @@ export const SubmitButton = () => {
 
   const handleSubmit = async () => {
     if (nodes.length === 0 || edges.length === 0) {
-      // Display a warning if nodes or edges are empty
       notify(
         "Please add nodes and edges before submitting the pipeline.",
         "warning"
