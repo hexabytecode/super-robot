@@ -42,6 +42,7 @@ export const DecisionNode = ({ id, data }) => {
       title="Decision"
       content={content}
       handles={handles}
+      icon="⚖️"
     />
   );
 };

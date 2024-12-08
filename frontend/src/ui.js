@@ -1,6 +1,3 @@
-// ui.js
-// Displays the drag-and-drop UI
-
 import { useState, useRef, useCallback } from "react";
 import ReactFlow, { Controls, Background, MiniMap } from "reactflow";
 import { useStore } from "./store";
@@ -16,6 +13,7 @@ import { DecisionNode } from "./nodes/newNodes/decisionNode";
 import { TimeoutNode } from "./nodes/newNodes/timeoutNode";
 
 import "reactflow/dist/style.css";
+import { handleOnDrop, handleOnDragOver } from "./helpers/dragDrop";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -54,54 +52,23 @@ export const PipelineUI = () => {
     onConnect,
   } = useStore(selector, shallow);
 
-  const getInitNodeData = (nodeID, type) => {
-    let nodeData = { id: nodeID, nodeType: `${type}` };
-    return nodeData;
-  };
-
   const onDrop = useCallback(
-    (event) => {
-      event.preventDefault();
-
-      const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
-      if (event?.dataTransfer?.getData("application/reactflow")) {
-        const appData = JSON.parse(
-          event.dataTransfer.getData("application/reactflow")
-        );
-        const type = appData?.nodeType;
-
-        // check if the dropped element is valid
-        if (typeof type === "undefined" || !type) {
-          return;
-        }
-
-        const position = reactFlowInstance.project({
-          x: event.clientX - reactFlowBounds.left,
-          y: event.clientY - reactFlowBounds.top,
-        });
-
-        const nodeID = getNodeID(type);
-        const newNode = {
-          id: nodeID,
-          type,
-          position,
-          data: getInitNodeData(nodeID, type),
-        };
-
-        addNode(newNode);
-      }
-    },
-    [reactFlowInstance]
+    (event) =>
+      handleOnDrop(
+        event,
+        reactFlowInstance,
+        reactFlowWrapper,
+        getNodeID,
+        addNode
+      ),
+    [reactFlowInstance, getNodeID, addNode]
   );
 
-  const onDragOver = useCallback((event) => {
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-  }, []);
+  const onDragOver = useCallback((event) => handleOnDragOver(event), []);
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "73vh" }}>
+      <div ref={reactFlowWrapper} style={{ width: "100vw", height: "70vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -115,7 +82,7 @@ export const PipelineUI = () => {
           proOptions={proOptions}
           snapGrid={[gridSize, gridSize]}
           connectionLineType="smoothstep"
-          className={{ backgroundColor: "#e5e7eb" }} /* Light gray background */
+          className={{ backgroundColor: "#e5e7eb" }}
         >
           <Background color="#000" gap={gridSize} lineWidth={2} />
           <Controls />

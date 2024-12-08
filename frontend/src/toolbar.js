@@ -14,10 +14,19 @@ export const PipelineToolbar = () => {
   ];
 
   return (
-    <div className="p-4 shadow-md">
+    <div className="p-4 shadow-md bg-white">
+      <div className="mb-4">
+        <h2 className="text-xl font-semibold">Pipeline Toolbar</h2>
+        <p className="text-sm text-gray-500">
+          Drag and drop nodes to build your pipeline.
+        </p>
+      </div>
+
+      {/* Toolbar items */}
       <div className="mt-4 flex flex-wrap gap-4 justify-start">
         {toolbarItems.map((item, index) => (
           <DraggableNode
+            className={"rounded-lg"}
             key={index}
             type={item.type}
             label={item.label}

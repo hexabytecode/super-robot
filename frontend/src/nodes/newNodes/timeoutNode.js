@@ -16,7 +16,7 @@ export const TimeoutNode = ({ id, data }) => {
   const content = (
     <div className="space-y-2">
       <div className="flex items-center space-x-2">
-        <label className="node-label">Timeout Duration:</label>
+        <label className="node-label">Duration:</label>
         <input
           type="number"
           value={timeoutDuration}
@@ -53,6 +53,7 @@ export const TimeoutNode = ({ id, data }) => {
       title="Timeout"
       content={content}
       handles={handles}
+      icon="⏳"
     />
   );
 };

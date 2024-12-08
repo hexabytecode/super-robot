@@ -58,4 +58,5 @@ export const useStore = create((set, get) => ({
       }),
     });
   },
+  reset: () => set({ nodes: [], edges: [] }),
 }));

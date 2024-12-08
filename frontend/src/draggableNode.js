@@ -11,15 +11,19 @@ export const DraggableNode = ({ type, label, icon }) => {
     event.dataTransfer.effectAllowed = "move";
   };
 
+  const onDragEnd = (event) => {
+    event.target.style.cursor = "grab";
+  };
+
   return (
     <div
-      className={"toolbar"}
+      className={"draggableNodes"}
       onDragStart={(event) => onDragStart(event, type)}
-      onDragEnd={(event) => (event.target.style.cursor = "grab")}
+      onDragEnd={onDragEnd}
       draggable
     >
-      {icon && <span className="text-2xl mb-1">{icon}</span>}
-      <span className="text-md">{label}</span>
+      {icon && <span className="text-lg mb-1">{icon}</span>}
+      <span className="text-sm">{label}</span>
     </div>
   );
 };

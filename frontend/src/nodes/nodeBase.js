@@ -3,11 +3,13 @@ import React from "react";
 import { Handle } from "reactflow";
 import "../styles/nodeStyles.css"; // Import the CSS file
 
-const NodeBase = ({ id, type, title, content, handles }) => {
+const NodeBase = ({ id, type, title, content, handles, icon }) => {
   return (
     <div className="node-base">
-      <div className="text-xl font-semibold mb-2">{title}</div>
-      <div className="text-sm mb-4">{content}</div>
+      <div className="node-title">
+        {icon} {title}
+      </div>
+      <div className="mb-2">{content}</div>
       <div className="flex justify-between">
         {handles.map((handle, index) => (
           <Handle

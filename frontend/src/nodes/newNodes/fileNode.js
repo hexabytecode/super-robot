@@ -31,6 +31,7 @@ export const FileNode = ({ id, data }) => {
       title="File"
       content={content}
       handles={handles}
+      icon="📂"
     />
   );
 };

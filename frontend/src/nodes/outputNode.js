@@ -46,6 +46,7 @@ export const OutputNode = ({ id, data }) => {
       title="Output"
       content={content}
       handles={handles}
+      icon="📤"
     />
   );
 };

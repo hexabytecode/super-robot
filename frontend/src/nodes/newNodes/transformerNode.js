@@ -35,6 +35,7 @@ export const TransformerNode = ({ id, data }) => {
       title="Transformer"
       content={content}
       handles={handles}
+      icon="🔧"
     />
   );
 };

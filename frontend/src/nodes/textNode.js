@@ -92,6 +92,7 @@ export const TextNode = ({ id, data }) => {
       title="Text"
       content={content}
       handles={allHandles}
+      icon="📝"
     />
   );
 };

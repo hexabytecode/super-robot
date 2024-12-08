@@ -33,6 +33,7 @@ export const FilterNode = ({ id, data }) => {
       title="Filter"
       content={content}
       handles={handles}
+      icon="🔍"
     />
   );
 };

@@ -46,6 +46,7 @@ export const InputNode = ({ id, data }) => {
       title="Input"
       content={content}
       handles={handles}
+      icon="📥"
     />
   );
 };

@@ -2,22 +2,26 @@
 
 /* For the input fields */
 .node-input {
-  @apply px-3 py-1 border border-gray-300 rounded-md w-full text-sm;
+  @apply px-2 py-1 border border-gray-300 rounded-md w-full text-xs;
 }
 
 /* For the select dropdowns */
 .node-select {
-  @apply px-3 py-1 border border-gray-300 rounded-md w-full text-sm;
+  @apply px-2 py-1 border border-gray-300 rounded-md w-full text-xs;
 }
 
 /* For custom node base container styling */
 .node-base {
-  @apply w-64 h-auto p-4 bg-white border border-gray-300 rounded-lg shadow-lg;
+  @apply w-56 h-auto p-4 bg-white border border-gray-300 rounded-lg shadow-lg;
+}
+
+.node-title {
+  @apply text-base font-bold mb-2;
 }
 
 /* Custom label style */
 .node-label {
-  @apply text-sm font-medium;
+  @apply text-xs font-medium;
 }
 
 .btn {
@@ -25,13 +29,13 @@
 }
 
 .submit {
-  @apply bg-gray-100 text-black hover:bg-gray-200;
+  @apply bg-gray-50 text-black hover:bg-gray-100;
 }
 
 .reset {
   @apply bg-red-700 text-white hover:bg-red-800;
 }
 
-.toolbar {
-  @apply bg-gray-100 text-black cursor-grab flex items-center justify-center flex-col min-w-[80px] h-[80px] rounded-lg p-4 shadow-md hover:bg-gray-200 transition duration-300;
+.draggableNodes {
+  @apply bg-gray-50 text-black cursor-grab flex items-center justify-center flex-col min-w-[70px] h-[70px] rounded-lg p-3 shadow-md hover:bg-gray-100 transition duration-300;
 }

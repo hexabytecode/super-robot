@@ -4,7 +4,7 @@ import "../styles/nodeStyles.css"; // Import the CSS file
 
 export const LLMNode = ({ id }) => {
   const content = (
-    <span className="text-sm text-gray-600">This is an LLM node.</span>
+    <span className="node-label text-gray-500">This is an LLM node.</span>
   );
 
   const handles = [
@@ -30,6 +30,7 @@ export const LLMNode = ({ id }) => {
       title="LLM"
       content={content}
       handles={handles}
+      icon="🤖"
     />
   );
 };
