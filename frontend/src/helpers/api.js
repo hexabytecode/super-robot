@@ -1,8 +1,9 @@
 import axios from "axios";
+import { config } from "../config";
 
 export const submitPipeline = async (nodes, edges) => {
   try {
-    const response = await axios.post("http://127.0.0.1:8000/pipelines/parse", {
+    const response = await axios.post(`${config.backendURL}/pipelines/parse`, {
       nodes,
       edges,
     });
