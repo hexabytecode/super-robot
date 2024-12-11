@@ -1,4 +1,4 @@
-# 📊 VectorShift Clone - Graph Management Tool
+# 📊 VectorShift Clone - YCom backed startup
 
 This project is a **clone of a Y Combinator-backed startup**, developed as a coding assignment. It demonstrates **advanced frontend and backend skills**, ensuring a **scalable, modular, and user-friendly application**. 
 
